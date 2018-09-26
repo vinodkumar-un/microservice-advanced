@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="replaceTask" default="main">
+	<property file="db-test.properties" />
+	<property file="build.properties" />
+	<property name="failmessage" value="Jdbc Driver Missing..." />
+	<target name="main" depends="clean,createDirs,compile,package,execute" />
+
+	<path id="jar.path">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${dist.dir}/${ant.project.name}.jar" />
+	</path>
+
+	<condition property="isJdbcDriverAvail">
+		<available file="${lib.dir}/ojdbc6.jar" />
+	</condition>
+	<fail unless="${isJdbcDriverAvail}" message="${failmessage}" />
+
+	<target name="clean">
+		<delete dir="${classes.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete dir="${build.dir}" />
+	</target>
+	<target name="createDirs">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" />
+		<copy todir="${classes.dir}">
+			<fileset dir="${src.dir}">
+				<include name="*.properties" />
+			</fileset>
+			<filterset begintoken="$" endtoken="}" filtersfile="db-dev.properties">
+			</filterset>
+		</copy>
+	</target>
+	<!--
+	<target name="replaceStr">
+		<replace file="${classes.dir}/db.properties" token="${driverClassname}" value="${db.driverClassname}" />
+		<replace file="${classes.dir}/db.properties" token="${url}" value="${db.url}" />
+		<replace file="${classes.dir}/db.properties" token="${username}" value="${db.username}" />
+		<replace file="${classes.dir}/db.properties" token="${password}" value="${db.password}" />
+	</target>
+	-->
+	<target name="package">
+		<jar basedir="${classes.dir}" destfile="${dist.dir}/${ant.project.name}.jar" />
+	</target>
+	<target name="execute">
+		<java classname="com.rt.dao.StudentDao" classpathref="jar.path" />
+	</target>
+</project>
+
+
+
+

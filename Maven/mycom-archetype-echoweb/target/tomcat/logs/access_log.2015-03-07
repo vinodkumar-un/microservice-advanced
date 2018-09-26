@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [07/Mar/2015:19:54:52 +0530] "GET /EchoWeb/echo HTTP/1.1" 404 - http-bio-8081-exec-1 0
+0:0:0:0:0:0:0:1 - - [07/Mar/2015:19:54:52 +0530] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8081-exec-2 0
+0:0:0:0:0:0:0:1 - - [07/Mar/2015:19:54:52 +0530] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8081-exec-3 0
+0:0:0:0:0:0:0:1 - - [07/Mar/2015:19:55:17 +0530] "GET /EchoWeb/echo HTTP/1.1" 404 - http-bio-8081-exec-5 0
+0:0:0:0:0:0:0:1 - - [07/Mar/2015:19:55:54 +0530] "GET /mycom-archetype-echoweb/echo HTTP/1.1" 200 27 http-bio-8081-exec-1 63

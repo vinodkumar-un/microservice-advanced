@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="conditional_target" default="execute">
+	<property name="jdkbuildfailmessage" value="Use Jdk1.7"/>
+	<condition property="isJdk17">
+		<equals arg1="${ant.java.version}" arg2="1.6"/>
+	</condition>
+	<fail unless="${isJdk17}" message="${jdkbuildfailmessage}"/>
+	<target name="compile">
+		<echo>compiling...</echo>
+	</target>
+	<target name="execute" depends="compile">
+		<echo>executing..</echo>
+	</target>
+</project>
+
+
+
+
