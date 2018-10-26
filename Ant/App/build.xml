@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<project name="app" default="execute">
-	<target name="compile">
-		<javac srcdir="src" destdir="build/classes"/>
-	</target>
-	<target name="execute" depends="compile">
-		<java classname="com.ant.helper.MessageHelper" classpath="build/classes"/>
-	</target>
-</project>

@@ -1,7 +1,0 @@
-<project name="EchoProject">
-
-  <target name="default">
-    <echo>Hello Ant!</echo>
-  </target>
-
-</project>
