@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>client app</title>
+</head>
+<body>
+  <h1>that's your dashboard</h1> 
+  <h3>your profile from [Profile Application]</h3>
+  <table>
+    <tr>
+        <td><b>name</b></td>
+        <!-- <td th:text="${profile.name}">username</td> -->
+        <td><span class="name"></span></td>
+    </tr>
+    <tr>
+        <td><b>email</b></td>
+        <!--<td th:text="${profile.email}">email</td> -->
+        <td><span class="email"></span></td>
+    </tr>
+  </table>
+</body>
+<script src="/jquery-2.2.0.min.js"></script>
+<script src="/profile.js"></script>
+</html>

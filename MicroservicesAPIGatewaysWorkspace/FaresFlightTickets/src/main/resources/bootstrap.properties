@@ -1,0 +1,31 @@
+spring.application.name=fares-service
+spring.cloud.config.uri=http://localhost:8888
+
+server.port=8081
+
+#Move all below properties to fares-service.properties file in Git repo
+#spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+#spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+#spring.datasource.username=fareuser
+#spring.datasource.password=aspire123
+#spring.jpa.properties.hibernate.default_schema=FAREUSER
+#
+##tomcat-connection settings
+#spring.datasource.tomcat.initialSize=20
+#spring.datasource.tomcat.max-active=25
+#
+#spring.jpa.hibernate.ddl-auto=create
+#spring.jpa.show-sql=true
+#
+##Turn Off Spring Security to allow actuators endpoints
+#management.security.enabled=false
+#
+#spring.boot.admin.url=http://localhost:8093
+#spring.boot.admin.username=admin
+#spring.boot.admin.password=admin
+
+
+
+
+
+
